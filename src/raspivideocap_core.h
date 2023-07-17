@@ -22,6 +22,13 @@
 #define RASPI_CAM_IF_CORE_H_
 
 #include <opencv2/opencv.hpp>
+#include <opencv2/core/version.hpp>
+
+#if CV_MAJOR_VERSION == 4
+#define CV_CAP_PROP_FRAME_WIDTH  cv::CAP_PROP_FRAME_WIDTH
+#define CV_CAP_PROP_FRAME_HEIGHT cv::CAP_PROP_FRAME_HEIGHT
+#define CV_CAP_PROP_FPS          cv::CAP_PROP_FPS
+#endif
 
 #include "bcm_host.h"
 #include "interface/vcos/vcos.h"
